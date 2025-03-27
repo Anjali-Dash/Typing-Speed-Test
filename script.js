@@ -23,7 +23,7 @@ const paragraphs = {
 };
 
 let timer;
-let timeLeft = 30;
+let timeLeft = 20;
 let started = false;
 let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 let originalWords = [], typedWords = [];
@@ -48,7 +48,7 @@ function startTest() {
     originalWords = text.split(" ");
     typedWords = [];
     updateParagraphDisplay();
-    timeLeft = 30;
+    timeLeft = 20;
     document.getElementById("timer").textContent = timeLeft;
     clearInterval(timer);
     timer = setInterval(updateTimer, 1000);
@@ -106,7 +106,7 @@ function calculateScore() {
     document.getElementById("paragraph").innerHTML = highlightedText.trim();
     document.getElementById("mistakes").textContent = mistakes;
 
-    const wpm = ((correctWords / 30) * 60).toFixed(2);
+    const wpm = ((correctWords / 20) * 60).toFixed(2);
     const accuracyScore = ((correctWords / originalText.length) * 100).toFixed(2);
     const overallScore = ((parseFloat(wpm) + parseFloat(accuracyScore)) / 2).toFixed(2);
 
