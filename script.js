@@ -23,7 +23,7 @@ const paragraphs = {
 };
 
 let timer;
-let timeLeft = 20;
+let timeLeft = 30;
 let started = false;
 let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 let originalWords = [], typedWords = [];
