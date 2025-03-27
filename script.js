@@ -36,7 +36,7 @@ function startTest() {
     document.getElementById("typingArea").focus();
     const difficulty = document.getElementById("difficulty").value;
     document.getElementById("paragraph").textContent = paragraphs[difficulty][Math.floor(Math.random() * paragraphs[difficulty].length)];
-    timeLeft = 20;
+    timeLeft = 30;
     document.getElementById("timer").textContent = timeLeft;
     document.getElementById("wpm").textContent = 0;
     document.getElementById("mistakes").textContent = 0;
@@ -48,7 +48,7 @@ function startTest() {
     originalWords = text.split(" ");
     typedWords = [];
     updateParagraphDisplay();
-    timeLeft = 20;
+    timeLeft = 30;
     document.getElementById("timer").textContent = timeLeft;
     clearInterval(timer);
     timer = setInterval(updateTimer, 1000);
@@ -106,7 +106,7 @@ function calculateScore() {
     document.getElementById("paragraph").innerHTML = highlightedText.trim();
     document.getElementById("mistakes").textContent = mistakes;
 
-    const wpm = ((correctWords / 20) * 60).toFixed(2);
+    const wpm = ((correctWords / 30) * 60).toFixed(2);
     const accuracyScore = ((correctWords / originalText.length) * 100).toFixed(2);
     const overallScore = ((parseFloat(wpm) + parseFloat(accuracyScore)) / 2).toFixed(2);
 
